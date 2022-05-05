@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #e8eaed;
+  font-family: 'Montserrat', sans-serif;
+}
+.slideshow {
+  width: 960px;
+  height: 540px;
+  background-color: lightgrey;
+  margin: 0 auto;
+  margin-top: 5%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 30;
+}
+.slideshow:hover .icons {
+  transform: translateX(0);
+}
+.slideshow:hover .toggle.paused {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 25px;
+  transform: none;
+  font-size: 40px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+}
+.slideshow:hover .dailog {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.5s ease 0.5s;
+}
+.toggle:hover:active, .toggle.paused:hover:active {
+  transition: all 0s ease;
+  transform: scale(0.85,0.85);
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.25);
+}
+.dailog {
+  position: absolute;
+  top: 0;
+  z-index: 25;
+  color: white;
+  font-size: 22px;
+  color: white;
+  right: 0;
+  left: 0;
+  text-align: center;
+  height: 100px;
+  line-height: 50px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  transition: all 0.5s ease 1s;
+  display: none;
+  transform: translateY(0);
+}
+.dailog.show {
+  display: block;
+}
+.caption {
+  position: absolute;
+  bottom: 0;
+  z-index: 25;
+  color: white;
+  font-size: 20px;
+  color: white;
+  display: block;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(0,0,0,0.5);
+  transition: all 0.5s ease 1s;
+  transform: translateY(0);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 10px;
+  border-radius: 6px 6px 0 0;
+}
+.icons {
+  background: linear-gradient(to bottom right, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75));
+  position: absolute;
+  z-index: 25;
+  bottom: 0;
+  right: 0;
+  padding: 35px 10px 0 55px;
+  border-radius: 100% 0 25px 0;
+  transition: all 0.25s ease;
+  transform: translate(100%, 100%);
+}
+.icons .material-icons {
+  padding: 3px 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: white;
+  font-size: 30px;
+}
+.icons:hover .material-icons {
+  font-size: 40px;
+  padding: 5px 0;
+}
+.icons .material-icons:active {
+  transition: all 0s ease;
+  transform: scale(1.25, 1.25);
+}
+.toggle {
+  z-index: 25;
+  position: absolute;
+  bottom: 0;
+  font-size: 30px;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  border-radius: 0 25px;
+  color: white;
+  padding: 3px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(5px);
+}
+.toggle:hover {
+  font-size: 40px;
+  background: rgba(0,0,0,0.5);
+  padding: 5px;
+}
+.toggle.paused {
+  font-size: 40px;
+  padding: 5px;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  bottom: 50%;
+  border-radius: 50%;
+  font-size: 50px;
+  background: rgba(0,0,0,0.7);
+}
+img {
+  width: 960px;
+  height: 540px;
+  position: absolute;
+  background-color: white;
+  border-radius: 0 0 25px 25px;
+  transition: all 0.5s ease;
+}
+img.hide {
+  transition: transform 1s ease, opacity 0.5s ease 0.5s;
+  opacity: 0;
+  transform: scale(2, 2) translateY(-80%);
+}
+img:first-child {
+  z-index: 4;
+}
+img:nth-child(2) {
+  z-index: 3;
+}
+img:nth-child(3) {
+  z-index: 2;
+}
+img:last-child {
+  z-index: 1;
+}
+@media screen and (max-width: 1000px) {
+  img {
+    width: 800px;
+    height: 450px;
+  }
+  .slideshow {
+    width: 800px;
+    height: 450px;
+  }
+}
+ 
+@media screen and (max-width: 825px) {
+  img {
+    width: 640px;
+    height: 360px;
+  }
+  .slideshow {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media screen and (max-width: 665px) {
+  img {
+    width: 480px;
+    height: 270px;
+  }
+  .slideshow {
+    width: 480px;
+    height: 270px;
+  }
+}
+@media screen and (max-width: 485px) {
+  img {
+    width: 320px;
+    height: 180px;
+  }
+  .slideshow {
+    width: 320px;
+    height: 180px;
+  }
+}
+@keyframes shake {
+  0%   {  }
+  25%  {transform: rotate(15deg)}
+  50%  {transform: rotate(-15deg)}
+  75%  {transform: rotate(15deg)}
+  100% {transform: rotate(0deg)}
+}
