@@ -70,7 +70,7 @@ $('.slideshow').click(function(e) {
       }, 150);
     }
   } else {
-    toggle();
+    toggle()
   }
-});
+})
  
